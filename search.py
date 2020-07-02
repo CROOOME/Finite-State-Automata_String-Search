@@ -44,12 +44,13 @@ class FSA(object):
 
     def search(self, sequence):
         current_node = self.head
-        for i in sequence:
+        for i, val in enumerate(sequence):
             if current_node.finished:
-                print('Found pattern {} in sequence {}'.format(self.pattern, sequence))
+                print("Found pattern '{}'  @ {} in sequence '{}'".format(self.pattern, i, sequence[:i]))
                 return
-            if i in current_node.move:
-                current_node = current_node.move[i]
+            if val in current_node.move:
+                print('i: {} val: {}'.format(i, val))
+                current_node = current_node.move[val]
             else:
                 current_node = self.head
         return
