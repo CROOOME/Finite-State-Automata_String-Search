@@ -21,7 +21,18 @@ class FSA(object):
         self.head.move[]
         for i in self.pattern[]:
             # use trie and matrix to generate the data
-            pass
+
+    def path(self):
+        current_node = self.head
+        # visited = {}
+        path = ''
+        while not current_node.finished:
+            for i in current_node.move:
+                path += '->' + i
+        print(path)
+        return path
+
+
 
     def search(self, sequence):
         current_node = self.head
