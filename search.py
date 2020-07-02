@@ -50,6 +50,8 @@ class FSA(object):
                 return
             if i in current_node.move:
                 current_node = current_node.move[i]
+            else:
+                current_node = self.head
         return
 
 
