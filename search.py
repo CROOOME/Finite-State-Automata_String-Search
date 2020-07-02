@@ -1,9 +1,9 @@
 
 
 class FSA_Node(object):
-    def __init__(self):
-        self.value = None
-        self.finished = False
+    def __init__(self, value=None, finished=False):
+        self.value = value
+        self.finished = finished
         self.move = {}   # Dict of Nodes to move to according to the input
 
 
@@ -17,10 +17,17 @@ class FSA(object):
         if pattern:
             print('overriding pattern: old: {} new: {}'.format(self.pattern, pattern))
             self.pattern = pattern
+
         self.head = FSA_Node()
-        self.head.move[]
-        for i in self.pattern[]:
-            # use trie and matrix to generate the data
+        current_node = self.head
+        for i in self.pattern:
+            # version 1: iterative string
+            next_node = FSA_Node(value=i)
+            current_node.move[i] = next_node
+            current_node = next_node
+            print('current_node {}'.format(current_node.value))
+
+        current_node.finished = True
 
     def path(self):
         current_node = self.head
@@ -31,8 +38,6 @@ class FSA(object):
                 path += '->' + i
         print(path)
         return path
-
-
 
     def search(self, sequence):
         current_node = self.head
