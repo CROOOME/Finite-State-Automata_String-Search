@@ -17,15 +17,20 @@ class FSA(object):
         if pattern:
             print('overriding pattern: old: {} new: {}'.format(self.pattern, pattern))
             self.pattern = pattern
-
-        for i in self.pattern:
+        self.head = FSA_Node()
+        self.head.move[]
+        for i in self.pattern[]:
             # use trie and matrix to generate the data
             pass
 
     def search(self, sequence):
         current_node = self.head
         for i in sequence:
-
+            if current_node.finished:
+                print('Found pattern {} in sequence {}'.format(self.pattern, sequence))
+                return
+            if i in current_node.move:
+                current_node = current_node.move[i]
         return
 
 
