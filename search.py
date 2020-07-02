@@ -1,6 +1,6 @@
 
 
-class FSA_Node(object):
+class FSANode(object):
     def __init__(self, value=None, finished=False):
         self.value = value
         self.finished = finished
@@ -20,11 +20,11 @@ class FSA(object):
             print('overriding pattern: old: {} new: {}'.format(self.pattern, pattern))
             self.pattern = pattern
 
-        self.head = FSA_Node()
+        self.head = FSANode()
         current_node = self.head
         for i in self.pattern:
             # version 1: iterative string
-            next_node = FSA_Node(value=i)
+            next_node = FSANode(value=i)
             current_node.move[i] = next_node
             current_node = next_node
             print('current_node {}'.format(current_node.value))
@@ -38,8 +38,8 @@ class FSA(object):
         while not current_node.finished:
             for i in current_node.move:
                 path += '->' + i
-                print(path)
                 current_node = current_node.move[i]
+        print(path)
         return path
 
     def search(self, sequence):
