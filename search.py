@@ -13,6 +13,8 @@ class FSA(object):
         self.pattern = pattern
         self.layout = {}
 
+        self.parse_pattern()
+
     def parse_pattern(self, pattern=None):
         if pattern:
             print('overriding pattern: old: {} new: {}'.format(self.pattern, pattern))
@@ -36,7 +38,8 @@ class FSA(object):
         while not current_node.finished:
             for i in current_node.move:
                 path += '->' + i
-        print(path)
+                print(path)
+                current_node = current_node.move[i]
         return path
 
     def search(self, sequence):
@@ -54,4 +57,5 @@ if __name__ == '__main__':
     sequence = 'Does this string contain the string test?'
     subsequence = 'test'
     fsa = FSA(pattern=subsequence)
+    fsa.path()
     fsa.search(sequence)
