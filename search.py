@@ -11,6 +11,22 @@ class FSA(object):
     def __init__(self, pattern):
         self.head = None
         self.pattern = pattern
+        self.layout = {}
+
+    def parse_pattern(self, pattern=None):
+        if pattern:
+            print('overriding pattern: old: {} new: {}'.format(self.pattern, pattern))
+            self.pattern = pattern
+
+        for i in self.pattern:
+            # use trie and matrix to generate the data
+            pass
+
+    def search(self, sequence):
+        current_node = self.head
+        for i in sequence:
+
+        return
 
 
 if __name__ == '__main__':
