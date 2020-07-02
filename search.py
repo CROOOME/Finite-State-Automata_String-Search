@@ -8,9 +8,13 @@ class FSA_Node(object):
 
 
 class FSA(object):
-    def __init__(self):
+    def __init__(self, pattern):
         self.head = None
+        self.pattern = pattern
 
 
 if __name__ == '__main__':
-    fsa = FSA()
+    sequence = 'Does this string contain the string test?'
+    subsequence = 'test'
+    fsa = FSA(pattern=subsequence)
+    fsa.search(sequence)
