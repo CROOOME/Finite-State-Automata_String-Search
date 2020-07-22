@@ -56,6 +56,10 @@ class FSA(object):
                 current_node = self.head
         return
 
+    def compression_algo(self, pattern):
+
+        raise NotImplementedError
+
 
 if __name__ == '__main__':
     sequence = 'Does this string contain the string test?'
