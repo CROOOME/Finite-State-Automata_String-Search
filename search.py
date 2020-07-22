@@ -57,6 +57,11 @@ class FSA(object):
         return
 
     def compression_algo(self, pattern):
+        """
+            Given a pattern, this method will return a compressed version of the the pattern
+        :param pattern:
+        :return: compression version of the pattern
+        """
 
         raise NotImplementedError
 
