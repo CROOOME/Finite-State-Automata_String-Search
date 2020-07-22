@@ -32,6 +32,9 @@ class FSA(object):
 
         current_node.finished = True
 
+        compressed_pattern = self.compression_algo(pattern)
+        print("Compressed pattern: ", compressed_pattern)
+
     def path(self):
         current_node = self.head
         # visited = {}
