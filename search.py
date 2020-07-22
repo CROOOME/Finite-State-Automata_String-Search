@@ -66,7 +66,9 @@ class FSA(object):
         :return: compression version of the pattern
         """
 
-        raise NotImplementedError
+        compressed_pattern = pattern
+
+        return compressed_pattern
 
 
 if __name__ == '__main__':
