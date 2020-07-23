@@ -70,7 +70,7 @@ class FSA(object):
 
         # First generate the compression
         # Iterate until compression generation converges
-        # Based on the compression
+        # Based on the compression update the FSA.move
         #
         # TODO: Update the FSA.move var
 
