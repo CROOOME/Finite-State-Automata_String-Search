@@ -68,6 +68,13 @@ class FSA(object):
 
         compressed_pattern = pattern
 
+        # First generate the compression
+        # Iterate until compression generation converges
+        # Based on the compression
+        #
+        # TODO: Update the FSA.move var
+
+
         return compressed_pattern
 
 
