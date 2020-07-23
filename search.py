@@ -52,6 +52,7 @@ class FSA(object):
             if current_node.finished:
                 print("Found pattern '{}'  @ {} in sequence '{}'".format(self.pattern, i, sequence[:i]))
                 return
+            # Check for invalid paths
             if val in current_node.move:
                 print('i: {} val: {}'.format(i, val))
                 current_node = current_node.move[val]
