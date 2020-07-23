@@ -75,8 +75,10 @@ class FSA(object):
         #
         # TODO: Update the FSA.move var
 
-
         return compressed_pattern
+
+    def generate_FSA(self, pattern):
+        raise NotImplementedError
 
 
 if __name__ == '__main__':
