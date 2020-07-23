@@ -78,6 +78,11 @@ class FSA(object):
         return compressed_pattern
 
     def generate_FSA(self, pattern):
+        """
+            Given a pattern, generate the FSA in compressed string format
+        :param pattern:
+        :return:
+        """
         raise NotImplementedError
 
 
