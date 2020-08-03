@@ -32,7 +32,7 @@ class FSA(object):
 
         current_node.finished = True
 
-        compressed_pattern = self.compression_algo(pattern)
+        compressed_pattern = self.compression_algo(self.pattern)
         print("Compressed pattern: ", compressed_pattern)
 
     def path(self):
