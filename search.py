@@ -80,7 +80,7 @@ class FSA(object):
             if pattern[i] == pattern[i+1]:
                 count += 1
             else:
-                compressed_pattern += pattern[i-1] + str(count)
+                compressed_pattern += pattern[i] + str(count)
                 count = 1
 
         print(compressed_pattern)
