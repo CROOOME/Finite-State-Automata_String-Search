@@ -98,7 +98,7 @@ class FSA(object):
 
 if __name__ == '__main__':
     sequence = 'Does this string contain the string test?'
-    subsequence = 'test'
+    subsequence = 'testting'
     fsa = FSA(pattern=subsequence)
     fsa.path()
     fsa.search(sequence)
