@@ -66,14 +66,25 @@ class FSA(object):
         :param pattern:
         :return: compression version of the pattern
         """
-
-        compressed_pattern = pattern
+        print(pattern)
+        compressed_pattern = '' #pattern
 
         # First generate the compression
         # Iterate until compression generation converges
         # Based on the compression update the FSA.move
         #
         # TODO: Update the FSA.move var
+
+        count = 1
+        for i, val in enumerate(pattern):
+
+            if pattern[i] == pattern[i-1]:
+                count += 1
+            else:
+                compressed_pattern += pattern[i-1] + str(count)
+                count = 1
+
+        print(compressed_pattern)
 
         return compressed_pattern
 
