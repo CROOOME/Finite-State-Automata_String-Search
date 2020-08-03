@@ -76,9 +76,8 @@ class FSA(object):
         # TODO: Update the FSA.move var
 
         count = 1
-        for i, val in enumerate(pattern):
-
-            if pattern[i] == pattern[i-1]:
+        for i in range(0, len(pattern)-1):
+            if pattern[i] == pattern[i+1]:
                 count += 1
             else:
                 compressed_pattern += pattern[i-1] + str(count)
