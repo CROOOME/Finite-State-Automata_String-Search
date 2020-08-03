@@ -83,6 +83,8 @@ class FSA(object):
                 compressed_pattern += pattern[i] + str(count)
                 count = 1
 
+        compressed_pattern += pattern[-1] + str(count)
+
         print(compressed_pattern)
 
         return compressed_pattern
