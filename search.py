@@ -5,7 +5,6 @@ class FSANode(object):
         self.value = value
         self.finished = finished
         self.move = {}   # Dict of Nodes to move to according to the input
-        self.edit_distance = 0
 
 
 class FSA(object):
@@ -100,7 +99,7 @@ class FSA(object):
 
 if __name__ == '__main__':
     sequence = 'Does this string contain the string test?'
-    subsequence = 'ttesttingg'
+    subsequence = 'test'
     fsa = FSA(pattern=subsequence)
     fsa.path()
     fsa.search(sequence)
