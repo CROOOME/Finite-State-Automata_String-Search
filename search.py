@@ -47,13 +47,13 @@ class FSA(object):
         for i, val in enumerate(sequence):
             if current_node.finished:
                 print("Found pattern '{}'  @ {} in sequence '{}'".format(self.pattern, i, sequence[:i]))
-                return
+                return True
             if val in current_node.move:
                 print('i: {} val: {}'.format(i, val))
                 current_node = current_node.move[val]
             else:
                 current_node = self.head
-        return
+        return False
 
 
 if __name__ == '__main__':
