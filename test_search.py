@@ -1,5 +1,9 @@
 import unittest
+import search
 
+
+class SearchTestCase(unittest.TestCase):
+    def test_basic_pattern(self):
 
 class MyTestCase(unittest.TestCase):
     def test_something(self):
