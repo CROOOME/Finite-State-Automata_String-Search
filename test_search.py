@@ -3,7 +3,7 @@ import search
 
 
 class SearchTestCase(unittest.TestCase):
-    def test_basic_pattern(self):
+    def test_basic_pattern_positive(self):
 
         sequence = 'Does this string contain the string test?'
         subsequence = 'test'
