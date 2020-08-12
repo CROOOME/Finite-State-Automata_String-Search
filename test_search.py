@@ -34,6 +34,18 @@ class SearchTestCase(unittest.TestCase):
 
         self.assertEqual(response, False)
 
+    def test_adding_spaces_pattern_positive(self):
+
+        sequence = 'Does this string contain the string test?'
+        subsequence = ' contain '
+
+        fsa = search.FSA(pattern=subsequence)
+        fsa.path()
+        response = fsa.search(sequence)
+
+        self.assertEqual(response, True)
+
+
 
 if __name__ == '__main__':
     unittest.main()
