@@ -11,6 +11,7 @@ class FSANode(object):
 class FSA(object):
     def __init__(self, pattern):
         self.head = None
+        self.patterns = []
         self.pattern = pattern
         self.layout = {}
 
