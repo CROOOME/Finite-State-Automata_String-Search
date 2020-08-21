@@ -66,6 +66,9 @@ class FSA(object):
                 current_node = self.head
         return False
 
+    def deep_search(self):
+        raise NotImplemented
+
     def compression_algo(self, pattern):
         """
             Given a pattern, this method will return a compressed version of the the pattern
