@@ -19,7 +19,8 @@ class FSA(object):
         self.parse_pattern()
 
     def parse_patterns(self):
-        raise NotImplemented
+        self.fsas = [self.parse_pattern(pattern=pattern) for pattern in self.patterns]
+        return True
 
     def parse_pattern(self, pattern=None):
         if pattern:
