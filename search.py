@@ -17,6 +17,9 @@ class FSA(object):
 
         self.parse_pattern()
 
+    def parse_patterns(self):
+        raise NotImplemented
+
     def parse_pattern(self, pattern=None):
         if pattern:
             print('overriding pattern: old: {} new: {}'.format(self.pattern, pattern))
