@@ -66,8 +66,13 @@ class FSA(object):
                 current_node = self.head
         return False
 
-    def deep_search(self):
-        raise NotImplemented
+    def deep_search(self, sequence):
+        output = []
+        for fsa in self.fsas:
+            self.head = fsa
+            output.append(self.search(sequence=sequence))
+        
+        return output
 
     def compression_algo(self, pattern):
         """
