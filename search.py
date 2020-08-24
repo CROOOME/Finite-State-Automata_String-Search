@@ -1,12 +1,12 @@
 
 
 class FSANode(object):
-    def __init__(self, value=None, finished=False):
+    def __init__(self, value=None, finished=False, pattern=None):
         self.value = value
         self.finished = finished
         self.move = {}   # Dict of Nodes to move to according to the input
         self.edit_distance = 0
-        self.pattern = None  # The Original path of this pattern
+        self.pattern = pattern  # The Original path of this pattern
 
 
 class FSA(object):
@@ -28,11 +28,11 @@ class FSA(object):
             print('overriding pattern: old: {} new: {}'.format(self.pattern, pattern))
             self.pattern = pattern
 
-        self.head = FSANode()
+        self.head = FSANode(pattern=pattern)
         current_node = self.head
         for i in self.pattern:
             # version 1: iterative string
-            next_node = FSANode(value=i)
+            next_node = FSANode(value=i, pattern=pattern)
             current_node.move[i] = next_node
             current_node = next_node
             print('current_node {}'.format(current_node.value))
