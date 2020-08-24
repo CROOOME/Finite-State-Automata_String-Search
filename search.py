@@ -6,6 +6,7 @@ class FSANode(object):
         self.finished = finished
         self.move = {}   # Dict of Nodes to move to according to the input
         self.edit_distance = 0
+        self.pattern = None  # The Original path of this pattern
 
 
 class FSA(object):
